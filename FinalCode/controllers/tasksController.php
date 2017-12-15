@@ -44,7 +44,24 @@ class tasksController extends http\controller
 
     public static function create()
     {
-        print_r($_POST);
+
+        self::getTemplate('addTask');
+           }
+
+ public static function addTask()
+    {
+       // self::getTemplate('addTask');
+        echo 'inside addtask';
+        $record = new todo();
+        $record->owneremail=$_POST['owneremail'];
+        $record->ownerid=$_POST['ownerid'];
+        $record->createddate=$_POST['cdate'];
+        $record->duedate=$_POST['ddate'];
+        $record->message=$_POST['message'];
+        $record->isdone=$_POST['isdone'];
+        $record->save();
+
+        echo "done";
     }
 
     //this is the function to view edit record form
