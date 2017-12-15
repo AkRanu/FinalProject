@@ -83,6 +83,15 @@ class routes
         $route->method = 'show';
         $routes[] = $route;
 
+        $route = new route();
+        $route->http_method = 'GET';
+        $route->action = 'create';
+        $route->page = 'tasks';
+        $route->controller = 'tasksController';
+        $route->method = 'create';
+        $routes[] = $route;
+
+
         //This goes in the login form action method
         //GET METHOD index.php?page=accounts&action=login
 
