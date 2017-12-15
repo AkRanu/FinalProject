@@ -91,7 +91,13 @@ class routes
         $route->method = 'create';
         $routes[] = $route;
 
-
+        $route = new route();
+        $route->http_method = 'POST';
+        $route->action = 'addtask';
+        $route->page = 'tasks';
+        $route->controller = 'tasksController';
+        $route->method = 'addTask';
+        $routes[] = $route;
         //This goes in the login form action method
         //GET METHOD index.php?page=accounts&action=login
 
@@ -138,6 +144,7 @@ class routes
         $route->controller = 'accountsController';
         $route->method = 'save';
         $routes[] = $route;
+
         //this is the route for the reg form
         $route = new route();
         $route->http_method = 'GET';
