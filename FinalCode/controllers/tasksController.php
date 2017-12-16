@@ -17,6 +17,11 @@ class tasksController extends http\controller
         $record = todos::findOne($_REQUEST['id']);
         self::getTemplate('show_task', $record);
     }
+    public static function alltasks()
+{
+    $record = todos::findTasksbyID($_REQUEST['id']);
+    self::getTemplate('show_all_task', $record);
+}
 
     //to call the show function the url is index.php?page=task&action=list_task
 
@@ -45,17 +50,19 @@ class tasksController extends http\controller
     public static function create()
     {
 
+        session_start();
         $user = new todo();
         $user->owneremail = $_POST['owneremail'];
         $user->ownerid = $_POST['ownerid'];
-        $user->createddate = $_POST['createddate'];
-        $user->duedate = $_POST['duedate'];
+        $user->createddate = $_POST['cdate'];
+        $user->duedate = $_POST['ddate'];
         $user->message = $_POST['message'];
         $user->isdone = $_POST['isdone'];
         $user->save();
         //self::getTemplate('all_tasks', $user);
         $userID = $_SESSION['userID'];
-        header("Location: index.php?page=tasks&action=all&id=".$userID);
+        echo $userID;
+        header("Location: index.php?page=tasks&action=alltasks&id=".$userID);
         //self::getTemplate('addTask');
            }
     public static function insertButton()
@@ -65,18 +72,7 @@ class tasksController extends http\controller
 
  public static function addTask()
     {
-       // self::getTemplate('addTask');
-        echo 'inside addtask';
-        $record = new todo();
-        $record->owneremail=$_POST['owneremail'];
-        $record->ownerid=$_POST['ownerid'];
-        $record->createddate=$_POST['cdate'];
-        $record->duedate=$_POST['ddate'];
-        $record->message=$_POST['message'];
-        $record->isdone=$_POST['isdone'];
-        $record->save();
-
-        echo "done";
+        self::getTemplate('addTask');
     }
 
     //this is the function to view edit record form

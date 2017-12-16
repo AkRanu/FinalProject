@@ -30,24 +30,8 @@ final class todo extends database\model
 
 
 
-    public function setPassword($password) {
 
-        $password = password_hash($password, PASSWORD_DEFAULT);
-
-
-        return $password;
-
-    }
-
-    public function checkPassword($LoginPassword) {
-
-        //return password_verify($LoginPassword, $this->password);
-        // print $true;
-        return TRUE;
-    }
-
-
-    public function validate()
+    /*public function validate()
     {
         $valid = TRUE;
         echo 'myemail: ' . $this->email;
@@ -59,7 +43,7 @@ final class todo extends database\model
 
         return $valid;
 
-    }
+    }*/
 
 }
 
