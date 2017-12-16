@@ -23,7 +23,7 @@ class tasksController extends http\controller
     public static function all()
     {
         $records = todos::findAll();
-        /*session_start();
+        session_start();
            if(key_exists('userID',$_SESSION)) {
                $userID = $_SESSION['userID'];
            } else {
@@ -33,7 +33,7 @@ class tasksController extends http\controller
         $userID = $_SESSION['userID'];
 
         $records = todos::findTasksbyID($userID);
-        */
+
         self::getTemplate('all_tasks', $records);
 
     }
@@ -45,8 +45,23 @@ class tasksController extends http\controller
     public static function create()
     {
 
-        self::getTemplate('addTask');
+        $user = new todo();
+        $user->owneremail = $_POST['owneremail'];
+        $user->ownerid = $_POST['ownerid'];
+        $user->createddate = $_POST['createddate'];
+        $user->duedate = $_POST['duedate'];
+        $user->message = $_POST['message'];
+        $user->isdone = $_POST['isdone'];
+        $user->save();
+        //self::getTemplate('all_tasks', $user);
+        $userID = $_SESSION['userID'];
+        header("Location: index.php?page=tasks&action=all&id=".$userID);
+        //self::getTemplate('addTask');
            }
+    public static function insertButton()
+    {
+        self::getTemplate('create_tasks');
+    }
 
  public static function addTask()
     {
@@ -77,11 +92,22 @@ class tasksController extends http\controller
     public static function store()
     {
 
+        session_start();
+          $userID = $_SESSION['userID'];
+         //$record = todos::findOne($_REQUEST['id']);
+        //$record->body = $_REQUEST['body'];
+         $record = new todo();
+         $record->owneremail = $_POST['owneremail'];
+         $record->ownerid = $_SESSION['userID'];
+         $record->createddate = $_POST['createddate'];
+         $record->duedate = $_POST['duedate'];
+         $record->message = $_POST['message'];
+         $record->isdone = $_POST['isdone'];
+         $record->save();
+        //print_r($_POST);
 
-        $record = todos::findOne($_REQUEST['id']);
-        $record->body = $_REQUEST['body'];
-        $record->save();
-        print_r($_POST);
+        header("Location: index.php?page=tasks&action=all&id=".$userID);
+
 
     }
 
@@ -89,7 +115,7 @@ class tasksController extends http\controller
         session_start();
         $task = new todo();
 
-        $task->body = $_POST['body'];
+        //$task->body = $_POST['body'];
         $task->ownerid = $_SESSION['userID'];
         $task->save();
 
