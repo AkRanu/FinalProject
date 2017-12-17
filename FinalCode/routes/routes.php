@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: kwilliams
- * Date: 11/27/17
- * Time: 5:25 PM
- */
 class routes
 {
     public static function getRoutes()
@@ -45,6 +39,17 @@ class routes
         $route->controller = 'tasksController';
         $route->method = 'show';
         $routes[] = $route;
+
+        $route = new route();
+        $route->http_method = 'POST';
+        $route->action = 'editTask';
+        $route->page = 'tasks';
+        $route->controller = 'tasksController';
+        $route->method = 'editTask';
+        $routes[] = $route;
+
+
+
         //This is an examole of the post for tasks to list tasks.  See the action matches the method name.
         //you need to add routes for create, edit, and delete
         //GET METHOD index.php?page=tasks&action=all
@@ -121,6 +126,7 @@ class routes
         $route->controller = 'accountsController';
         $route->method = 'delete';
         $routes[] = $route;
+
         $route = new route();
         $route->http_method = 'GET';
         $route->action = 'edit';
@@ -128,6 +134,7 @@ class routes
         $route->controller = 'accountsController';
         $route->method = 'edit';
         $routes[] = $route;
+
         $route = new route();
         $route->http_method = 'POST';
         $route->action = 'save';

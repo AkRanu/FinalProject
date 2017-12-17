@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: kwilliams
- * Date: 11/27/17
- * Time: 5:32 PM
- */
 //each page extends controller and the index.php?page=tasks causes the controller to be called
 class accountsController extends http\controller
 {
@@ -66,6 +60,8 @@ class accountsController extends http\controller
         $record = accounts::findOne($_REQUEST['id']);
         self::getTemplate('edit_account', $record);
     }
+
+
 //this is used to save the update form data
     public static function save() {
         $user = accounts::findOne($_REQUEST['id']);

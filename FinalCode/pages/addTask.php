@@ -22,8 +22,8 @@
     Owner email: <input type="text" name="owneremail"><br>
     Owner id: <input type="text" name="ownerid"><br>
     Created date: <input type="text" name="cdate"><br>
-    due date: <input type="text" name="ddate"><br>
-    message: <input type="text" name="message"><br>
+    Due date: <input type="text" name="ddate"><br>
+    Message: <input type="text" name="message"><br>
     isdone: <input type="text" name="isdone"><br>
     <button type="submit">Add Task</button>
 </form>

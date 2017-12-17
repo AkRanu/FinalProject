@@ -1,10 +1,5 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: kwilliams
- * Date: 11/27/17
- * Time: 5:32 PM
- */
+
 
 
 //each page extends controller and the index.php?page=tasks causes the controller to be called
@@ -59,7 +54,9 @@ class tasksController extends http\controller
         $user->message = $_POST['message'];
         $user->isdone = $_POST['isdone'];
         $user->save();
+
         //self::getTemplate('all_tasks', $user);
+
         $userID = $_SESSION['userID'];
         echo $userID;
         header("Location: index.php?page=tasks&action=alltasks&id=".$userID);
@@ -89,9 +86,9 @@ class tasksController extends http\controller
     {
 
         session_start();
-          $userID = $_SESSION['userID'];
+         $userID = $_SESSION['userID'];
          //$record = todos::findOne($_REQUEST['id']);
-        //$record->body = $_REQUEST['body'];
+         //$record->body = $_REQUEST['body'];
          $record = new todo();
          $record->owneremail = $_POST['owneremail'];
          $record->ownerid = $_SESSION['userID'];
@@ -115,6 +112,12 @@ class tasksController extends http\controller
         $task->ownerid = $_SESSION['userID'];
         $task->save();
 
+    }
+
+    public static function editTask()
+    {
+        $record = todos::findOne($_REQUEST['id']);
+        self::getTemplate('edit_task', $record);
     }
 
     //this is the delete function.  You actually return the edit form and then there should be 2 forms on that.
