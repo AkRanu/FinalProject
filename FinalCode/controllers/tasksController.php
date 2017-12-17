@@ -104,6 +104,30 @@ class tasksController extends http\controller
 
     }
 
+    public static function updateTask()
+    {
+
+        echo "inside update";
+        session_start();
+        $userID = $_SESSION['userID'];
+        $records = todos::findOne($_REQUEST['id']);
+        //$record->body = $_REQUEST['body'];
+        $record = new todo();
+        $record->id = $records->id ;
+        $record->owneremail = $_POST['owneremail'];
+        $record->ownerid = $_SESSION['userID'];
+        $record->createddate = $_POST['createddate'];
+        $record->duedate = $_POST['duedate'];
+        $record->message = $_POST['message'];
+        $record->isdone = $_POST['isdone'];
+        $record->save();
+
+        print_r($_POST);
+        header("Location: index.php?page=tasks&action=alltasks&id=".$userID);
+
+
+    }
+
     public static function save() {
         session_start();
         $task = new todo();
@@ -126,7 +150,11 @@ class tasksController extends http\controller
     {
         $record = todos::findOne($_REQUEST['id']);
         $record->delete();
-        print_r($_POST);
+        //print_r($_POST);
+        session_start();
+        $userID = $_SESSION['userID'];
+        echo $userID;
+        header("Location: index.php?page=tasks&action=alltasks&id=".$userID);
 
     }
 

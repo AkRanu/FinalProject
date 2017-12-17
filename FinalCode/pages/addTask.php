@@ -25,7 +25,8 @@
     Due date: <input type="text" name="ddate"><br>
     Message: <input type="text" name="message"><br>
     isdone: <input type="text" name="isdone"><br>
-    <button type="submit">Add Task</button>
+    <br>
+    <button type="submit">Add</button>
 </form>
 
 

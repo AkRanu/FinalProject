@@ -48,6 +48,14 @@ class routes
         $route->method = 'editTask';
         $routes[] = $route;
 
+        $route = new route();
+        $route->http_method = 'POST';
+        $route->action = 'updateTask';
+        $route->page = 'tasks';
+        $route->controller = 'tasksController';
+        $route->method = 'updateTask';
+        $routes[] = $route;
+
 
 
         //This is an examole of the post for tasks to list tasks.  See the action matches the method name.

@@ -18,16 +18,16 @@
 <body>
 
 
-<h1>
+<h2>
     <?php
 
     //this how to print some data;
     echo $data['site_name'];
 
-    ?> </h1>
+    ?> </h2>
 
-<h1><a href="index.php?page=accounts&action=all">Show All Accounts</a></h1>
-<h1><a href="index.php?page=tasks&action=all">Show All Tasks</a></h1>
+<h3><a href="index.php?page=accounts&action=all">Show All Accounts</a></h3>
+<h3><a href="index.php?page=tasks&action=all">Show All Tasks</a></h3>
 
 <form action="index.php?page=accounts&action=login" method="POST">
 
@@ -37,15 +37,16 @@
 
         <label><b>Password</b></label>
         <input type="password" placeholder="Enter Password" name="pass" required>
+        <br>
 
         <button type="submit">Login</button>
     </div>
-    </div>-->
+    </div>
 
 
 
 </form>
-<h1><a href="index.php?page=accounts&action=register">Register</a></h1>
+<h3><a href="index.php?page=accounts&action=register">New User?</a></h3>
 
 
 <script src="js/scripts.js"></script>
