@@ -9,7 +9,7 @@ class htmlTable
     {
 
         if(!empty($array)) {
-
+            //$tableGen .= '<table align="centre">';
             $tableGen = '<table border="1"cellpadding="10">';
             $tableGen .= '<tr>';
             //this grabs the first element of the array so we can extract the field headings for the table
@@ -42,6 +42,7 @@ class htmlTable
 
     public static function generateTableFromOneRecord($innerArray)
     {
+        //$tableGen .= '<table align="centre">';
         $tableGen = '<table border="1" cellpadding="10"><tr>';
 
         $tableGen .= '<tr>';
@@ -54,7 +55,7 @@ class htmlTable
             $tableGen .= '<td>' . $value . '</td>';
         }
 
-        $tableGen .= '</tr></table><hr>';
+        $tableGen .= '</tr></table><br>';
         return $tableGen;
     }
 }

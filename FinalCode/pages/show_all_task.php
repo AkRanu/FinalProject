@@ -24,8 +24,8 @@ print utility\htmlTable::genarateTableFromMultiArray($data);
 
 
 ?>
-
-
+<br>
+<body background="http://fortifyexperts.com/wp-content/uploads/2016/07/checklist.jpg"></body>
 
 <form action="index.php?page=tasks&action=addTask" method="post" id="form1">
     <button type="submit" form="form1" value="create">Add Task</button>

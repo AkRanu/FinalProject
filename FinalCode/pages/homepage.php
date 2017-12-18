@@ -16,7 +16,7 @@
 </head>
 
 <body>
-
+<body background="https://businessbetties.com/wp-content/uploads/2016/10/052416-01-1280x640.jpg"></body>
 
 <h2>
     <?php
@@ -33,13 +33,13 @@
 
     <div class="container">
         <label><b>Username</b></label>
-        <input type="text" placeholder="Enter Username" name="email" required>
+        <input type="text" placeholder="Enter Username" name="email" required><br><br>
 
         <label><b>Password</b></label>
         <input type="password" placeholder="Enter Password" name="pass" required>
-        <br>
+        <br><br>
 
-        <button type="submit">Login</button>
+        <button type="submit">  Login  </button>
     </div>
     </div>
 
