@@ -137,7 +137,16 @@ class tasksController extends http\controller
         $task->save();
 
     }
+ /*   public static function logout() {
+        session_destroy();
+        $task = new todo();
 
+        //$task->body = $_POST['body'];
+        $task->ownerid = $_SESSION['userID'];
+        $task->save();
+
+    }
+*/
     public static function editTask()
     {
         $record = todos::findOne($_REQUEST['id']);

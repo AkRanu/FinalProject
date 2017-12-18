@@ -30,7 +30,13 @@ print utility\htmlTable::genarateTableFromMultiArray($data);
 <form action="index.php?page=tasks&action=addTask" method="post" id="form1">
     <button type="submit" form="form1" value="create">Add Task</button>
 </form>
-
+<br>
+<h1><a href="index.php?page=accounts&action=show">View my profile </a></h1>
+</form>
+<br>
+<form action="index.php?page=accounts&action=logout" method="post">
+    <button type="submit">Log Out</button>
+</form>
 
 
 <script src="js/scripts.js"></script>

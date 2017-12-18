@@ -22,20 +22,20 @@
     <?php
 
     //this how to print some data;
-    echo $data['site_name'];
+  //  echo $data['site_name'];
 
     ?> </h2>
 
-<h3><a href="index.php?page=accounts&action=all">Show All Accounts</a></h3>
-<h3><a href="index.php?page=tasks&action=all">Show All Tasks</a></h3>
-
+<!--/<h3><a href="index.php?page=accounts&action=all">Show All Accounts</a></h3>-->
+<!--<h3><a href="index.php?page=tasks&action=all">Show All Tasks</a></h3>-->
+<center>
 <form action="index.php?page=accounts&action=login" method="POST">
 
     <div class="container">
-        <label><b>Username</b></label>
+        <label><b><font color="white">Username</b></label>
         <input type="text" placeholder="Enter Username" name="email" required><br><br>
 
-        <label><b>Password</b></label>
+        <label><b>Password</b></label></font>
         <input type="password" placeholder="Enter Password" name="pass" required>
         <br><br>
 
@@ -47,7 +47,7 @@
 
 </form>
 <h3><a href="index.php?page=accounts&action=register">New User?</a></h3>
-
+</center>
 
 <script src="js/scripts.js"></script>
 </body>

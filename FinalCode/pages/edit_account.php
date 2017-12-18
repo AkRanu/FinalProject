@@ -17,19 +17,17 @@
 
 <body>
 
+<form action="index.php?page=accounts&action=save&id=<?php echo $data->id; ?>" method="post">
 
-<form action="index.php?page=tasks&action=updateTask&id=<?php echo $data->id ?>" method="POST">
-    Owner email: <input type="text" name="owneremail" value="<?php echo $data->owneremail ?>"><br>
-    Owner id: <input type="text" name="ownerid" value="<?php echo $data->ownerid ?>"><br>
-    Created date: <input type="text" name="cdate" value="<?php echo $data->createddate ?>"><br>
-    Due date: <input type="text" name="ddate" value="<?php echo $data->duedate ?>"><br>
-    Message: <input type="text" name="message" value="<?php echo $data->message ?>"><br>
-    isdone: <input type="text" name="isdone" value="<?php echo $data->isdone ?>"><br>
-    <br>
-    <button type="submit">Update</button>
+    First name: <input type="text" name="fname" value="<?php echo $data->fname; ?>"><br>
+
+    Last name: <input type="text" name="lname" value="<?php echo $data->lname; ?>"><br>
+    Email: <input type="text" name="email" value="<?php echo $data->email; ?>"><br>
+    Phone: <input type="text" name="phone" value="<?php echo $data->phone; ?>"><br>
+    Birthday: <input type="text" name="birthday" value="<?php echo $data->birthday; ?>"><br>
+    Gender: <input type="text" name="gender" value="<?php echo $data->gender; ?>"><br>
+    <input type="submit" value="Submit form">
 </form>
-
-
 
 <script src="js/scripts.js"></script>
 </body>

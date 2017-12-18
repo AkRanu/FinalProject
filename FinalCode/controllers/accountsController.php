@@ -6,7 +6,15 @@ class accountsController extends http\controller
     //to call the show function the url is index.php?page=task&action=show
     public static function show()
     {
-        $record = accounts::findOne($_REQUEST['id']);
+        session_start();
+        if(key_exists('userID',$_SESSION)) {
+            $userID = $_SESSION['userID'];
+        } else {
+            echo 'you must be logged in to view tasks';
+        }
+        $userID = $_SESSION['userID'];
+        $record = accounts::findOne($userID);
+       // $record = accounts::findOne($_REQUEST['id']);
         self::getTemplate('show_account', $record);
     }
     //to call the show function the url is index.php?page=accounts&action=all
@@ -72,7 +80,7 @@ class accountsController extends http\controller
         $user->birthday = $_POST['birthday'];
         $user->gender = $_POST['gender'];
         $user->save();
-        header("Location: index.php?page=accounts&action=all");
+        header("Location: index.php?page=tasks&action=alltasks&id=".$_REQUEST['id']);
     }
     public static function delete() {
         $record = accounts::findOne($_REQUEST['id']);
@@ -106,5 +114,11 @@ class accountsController extends http\controller
                 echo 'password does not match';
             }
         }
+    public static function logout()
+    {
+        session_destroy();
+        header('Location: index.php');
+    }
 
 }
+
