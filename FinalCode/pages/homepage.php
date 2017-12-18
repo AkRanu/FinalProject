@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
 
-    <title>The HTML5 Herald</title>
+    <title>Final Project</title>
     <meta name="description" content="The HTML5 Herald">
     <meta name="author" content="SitePoint">
 
@@ -22,7 +22,7 @@
     <?php
 
     //this how to print some data;
-  //  echo $data['site_name'];
+    //echo $data['site_name'];
 
     ?> </h2>
 

@@ -42,7 +42,11 @@ class htmlTable
 
     public static function generateTableFromOneRecord($innerArray)
     {
-        //$tableGen .= '<table align="centre">';
+        if(get_class($innerArray)=='account'){
+            if($innerArray->password){
+                unset($innerArray->password);
+            }
+        }
         $tableGen = '<table border="1" cellpadding="10"><tr>';
 
         $tableGen .= '<tr>';
