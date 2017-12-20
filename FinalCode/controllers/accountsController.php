@@ -32,6 +32,7 @@ class accountsController extends http\controller
         //https://www.sitepoint.com/why-you-should-use-bcrypt-to-hash-stored-passwords/
         //USE THE ABOVE TO SEE HOW TO USE Bcrypt
         self::getTemplate('register');
+
     }
     //this is the function to save the user the new user for registration
     public static function store()
@@ -54,7 +55,7 @@ class accountsController extends http\controller
             //you may want to send the person to a
             // login page or create a session and log them in
             // and then send them to the task list page and a link to create tasks
-            header("Location: index.php?page=accounts&action=all");
+            header("Location: index.php");
         } else {
             //You can make a template for errors called error.php
             // and load the template here with the error you want to show.
@@ -106,6 +107,7 @@ class accountsController extends http\controller
                 echo 'login';
                 session_start();
                 $_SESSION["userID"] = $user->id;
+            $_SESSION["userEmail"] = $user->email;
                 //forward the user to the show all todos page
                 print_r($_SESSION);
 

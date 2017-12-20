@@ -2,30 +2,30 @@
 
 <html lang="en">
 <head>
-    <meta charset="utf-8">
+     <meta charset="utf-8">
 
-    <title>Final Project</title>
-    <meta name="description" content="The HTML5 Herald">
-    <meta name="author" content="SitePoint">
+     <title>Final Project</title>
+     <meta name="description" content="The HTML5 Herald">
+     <meta name="author" content="SitePoint">
 
-    <link rel="stylesheet" href="css/styles.css?v=1.0">
+     <link rel="stylesheet" href="css/styles.css?v=1.0">
 
     <!--[if lt IE 9]>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
     <![endif]-->
 </head>
 
 <body>
 
-<?php
+    <?php
 //this is how you print something
 
-print utility\htmlTable::genarateTableFromMultiArray($data);
+        print utility\htmlTable::genarateTableFromMultiArray($data);
 
 
-?>
+    ?>
 
 
-<script src="js/scripts.js"></script>
+    <script src="js/scripts.js"></script>
 </body>
 </html>

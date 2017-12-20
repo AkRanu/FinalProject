@@ -17,22 +17,50 @@
 </head>
 
 <body>
-
-
-<form action="index.php?page=tasks&action=updateTask&id=<?php echo $data->id ?>" method="POST">
-    Owner email: <input type="text" name="owneremail" value="<?php echo $data->owneremail ?>"><br>
-    Owner id: <input type="text" name="ownerid" value="<?php echo $data->ownerid ?>"><br>
-    Created date: <input type="text" name="cdate" value="<?php echo $data->createddate ?>"><br>
-    Due date: <input type="text" name="ddate" value="<?php echo $data->duedate ?>"><br>
-    Message: <input type="text" name="message" value="<?php echo $data->message ?>"><br>
-    isdone: <input type="text" name="isdone" value="<?php echo $data->isdone ?>"><br>
+<body background="https://ak7.picdn.net/shutterstock/videos/1430977/thumb/7.jpg"></body>
+<center>
+    <h3>Edit Task</h3>
+<form action="index.php?page=tasks&action=updateTask&id=<?php echo $data->id ?>" onsubmit="return validateForm()"method="POST">
+    Owner email: <input type="text" name="owneremail" value="<?php echo $data->owneremail ?>"><br><br>
+    Owner id: <input type="text" name="ownerid" value="<?php echo $data->ownerid ?>" readonly><br><br>
+    Created date: <input type="text" name="cdate" value="<?php echo $data->createddate ?>" readonly><br><br>
+    Due date: <input type="text" name="ddate" value="<?php echo $data->duedate ?>" ><br><br>
+    Message: <input type="text" name="message" value="<?php echo $data->message ?>"><br><br>
+    isdone: <input type="text" name="isdone" value="<?php echo $data->isdone ?>"><br><br>
     <br>
-    <button type="submit">Update</button>
+    <button type="submit"><h4>Update</h4></button>
 </form>
-
+    </center>
 
 
 <script src="js/scripts.js"></script>
+<script>
+    function validateForm() {
+        var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+        var email = document.forms["updateTask"]["owneremail"].value;
+        var isdone = document.forms["updateTask"]["isdone"].value;
+        var temp;
+        // alert(isdone);
+        var alertmessage = "";
+        if (email == "")
+        {
+            alertmessage = alertmessage + "Please enter the Email address  ,";
+        }
+        if (!email.match(mailformat) && email != "")
+        {
+            alertmessage = alertmessage + "Email address is not Valid ,";
+        }
+        if (isdone == "1" || isdone == "0"){temp = true}
+        if(!temp){
+            alertmessage = alertmessage + "Please enter BINARY value 0/1 for IS DONE.";
+        }
+        if (alertmessage != "")
+        {
+            alert(alertmessage);
+            return false;
+        }
+    }
+</script>
 </body>
 </html>
 

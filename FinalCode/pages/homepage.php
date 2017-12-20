@@ -30,7 +30,7 @@
 <!--<h3><a href="index.php?page=tasks&action=all">Show All Tasks</a></h3>-->
 <center>
 <form action="index.php?page=accounts&action=login" method="POST">
-
+<br><br><br>
     <div class="container">
         <label><b><font color="white">Username</b></label>
         <input type="text" placeholder="Enter Username" name="email" required><br><br>
@@ -46,7 +46,7 @@
 
 
 </form>
-<h3><a href="index.php?page=accounts&action=register">New User?</a></h3>
+<h2><a href="index.php?page=accounts&action=register">New User?</a></h2>
 </center>
 
 <script src="js/scripts.js"></script>

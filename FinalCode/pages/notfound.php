@@ -16,9 +16,9 @@
 </head>
 
 <body>
-
+<centre>
 <h1>Page Not Found 404</h1>
-
+</centre>
 
 <script src="js/scripts.js"></script>
 </body>

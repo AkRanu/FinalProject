@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
 
-    <title>Final Project</title>
+    <title></title>
     <meta name="description" content="The HTML5 Herald">
     <meta name="author" content="SitePoint">
 
@@ -16,7 +16,9 @@
 </head>
 
 <body>
-
+<body background="https://ak7.picdn.net/shutterstock/videos/1430977/thumb/7.jpg"></body>
+<center>
+    <h4><u>Welcome <?php echo $data->fname; ?></u></h4>
 <?php
 //this is how you print something  $data contains the record that was selected on the table.
 
@@ -32,8 +34,7 @@ print utility\htmlTable::generateTableFromOneRecord($data);
 <!--<form action="index.php?page=accounts&action=delete&id=<?php echo $data->id; ?> " method="post" id="form1">
     <button type="submit" form="form1" value="delete">Delete</button>
 </form>-->
-
-
+</center>
 <script src="js/scripts.js"></script>
 </body>
 </html>

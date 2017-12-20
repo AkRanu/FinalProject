@@ -16,18 +16,22 @@
 </head>
 
 <body>
+<body background="https://ak7.picdn.net/shutterstock/videos/1430977/thumb/7.jpg"></body>
+    <center>
+        <h3>Add Task</h3>
+        <?php date_default_timezone_set('America/New_York'); ?>
 
+    <form action="index.php?page=tasks&action=createTask" method="POST">
+        Created date: <input type="text" name="cdate" value="<?php echo date('m/d/y');?>"><br><br>
+        Due date: <input type="text" name="ddate"><br><br>
+        Message: <input type="text" name="message"required><br><br>
+        isdone: <input type="text" name="isdone"required><br><br>
+        <br>
+        <button type="submit" id ="create"><h4>Add</h4></button>
+    </form>
 
-<form action="index.php?page=tasks&action=createTask" method="POST">
-    Owner email: <input type="text" name="owneremail"><br>
-    Owner id: <input type="text" name="ownerid"><br>
-    Created date: <input type="text" name="cdate"><br>
-    Due date: <input type="text" name="ddate"><br>
-    Message: <input type="text" name="message"><br>
-    isdone: <input type="text" name="isdone"><br>
-    <br>
-    <button type="submit">Add</button>
-</form>
+    </center>
+
 
 
 

@@ -16,6 +16,9 @@
 </head>
 
 <body>
+<body background="https://ak7.picdn.net/shutterstock/videos/1430977/thumb/7.jpg"></body>
+<center>
+    <h3>Task List</h3>
 
 <?php
 //this is how you print something  $data contains the record that was selected on the table.

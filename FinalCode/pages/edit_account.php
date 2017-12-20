@@ -16,17 +16,20 @@
 </head>
 
 <body>
+<body background="https://ak7.picdn.net/shutterstock/videos/1430977/thumb/7.jpg"></body>
+<center>
+    <h3>Edit Profile</h3>
 
 <form action="index.php?page=accounts&action=save&id=<?php echo $data->id; ?>" method="post">
 
-    First name: <input type="text" name="fname" value="<?php echo $data->fname; ?>"><br>
+    First name: <input type="text" name="fname" value="<?php echo $data->fname; ?>"required><br><br>
 
-    Last name: <input type="text" name="lname" value="<?php echo $data->lname; ?>"><br>
-    Email: <input type="text" name="email" value="<?php echo $data->email; ?>"><br>
-    Phone: <input type="text" name="phone" value="<?php echo $data->phone; ?>"><br>
-    Birthday: <input type="text" name="birthday" value="<?php echo $data->birthday; ?>"><br>
-    Gender: <input type="text" name="gender" value="<?php echo $data->gender; ?>"><br>
-    <input type="submit" value="Submit form">
+    Last name: <input type="text" name="lname" value="<?php echo $data->lname; ?>"required><br><br>
+    Email: <input type="text" name="email" value="<?php echo $data->email; ?>"required><br><br>
+    Phone: <input type="text" name="phone" value="<?php echo $data->phone; ?>"required><br><br>
+    Birthday: <input type="text" name="birthday" value="<?php echo $data->birthday; ?>"required><br><br>
+    Gender: <input type="text" name="gender" value="<?php echo $data->gender; ?>"required><br><br>
+    <input type="submit" value="Edit">
 </form>
 
 <script src="js/scripts.js"></script>

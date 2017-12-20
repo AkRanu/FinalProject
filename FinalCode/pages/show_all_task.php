@@ -17,27 +17,31 @@
 
 <body>
 
+<body background="http://fortifyexperts.com/wp-content/uploads/2016/07/checklist.jpg"></body>
+<center>
+<br><br><h2>Welcome</h2>
+
+<h2><a href="index.php?page=accounts&action=show">My Profile</a></h2>
+</form>
+<!--<h4>Welcome <?php echo $data->fname ?></h4>--><br><br>
+
+
 <?php
 //this is how you print something
-
-print utility\htmlTable::genarateTableFromMultiArray($data);
-
-
+    print utility\htmlTable::genarateTableFromMultiArray($data);
 ?>
 <br>
-<body background="http://fortifyexperts.com/wp-content/uploads/2016/07/checklist.jpg"></body>
 
-<form action="index.php?page=tasks&action=addTask" method="post" id="form1">
+    <form action="index.php?page=tasks&action=addTask" method="post" id="form1">
     <button type="submit" form="form1" value="create">Add Task</button>
-</form>
-<br>
-<h1><a href="index.php?page=accounts&action=show">View my profile </a></h1>
-</form>
-<br>
-<form action="index.php?page=accounts&action=logout" method="post">
-    <button type="submit">Log Out</button>
-</form>
+    </form>
+    <br><br>
 
+    <form action="index.php?page=accounts&action=logout" method="post">
+    <button type="submit">Log Out</button>
+    </form>
+
+</center>
 
 <script src="js/scripts.js"></script>
 </body>

@@ -1,7 +1,6 @@
 <?php
 
 
-
 //each page extends controller and the index.php?page=tasks causes the controller to be called
 class tasksController extends http\controller
 {
@@ -45,10 +44,11 @@ class tasksController extends http\controller
     public static function create()
     {
 
+        echo 'abc';
         session_start();
         $user = new todo();
-        $user->owneremail = $_POST['owneremail'];
-        $user->ownerid = $_POST['ownerid'];
+        $user->owneremail = $_SESSION["userEmail"];
+        $user->ownerid = $_SESSION['userID'];
         $user->createddate = $_POST['cdate'];
         $user->duedate = $_POST['ddate'];
         $user->message = $_POST['message'];
